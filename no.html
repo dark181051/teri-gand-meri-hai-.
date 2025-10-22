@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Really?</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Shared Aesthetic Styles (from index.html) */
+        :root {
+            --bg-start: #ff7eb9;
+            --bg-end: #7afcff;
+            --text-color: #3f51b5;
+            --button-yes: #cfff1a;
+            --button-no: #ff5252;
+        }
+
+        body {
+            background: linear-gradient(145deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            font-family: 'Bungee Inline', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: var(--text-color);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        h1 {
+            color: var(--text-color);
+            font-size: 3.2em;
+            text-shadow: 
+                -3px -3px 0px white,
+                3px 3px 0px rgba(0, 0, 0, 0.4); 
+            margin-bottom: 80px;
+        }
+
+        /* --- BUTTON STYLING --- */
+        .button {
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: transform 0.1s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 7px 0 rgba(0, 0, 0, 0.4); 
+            color: var(--text-color);
+            text-shadow: none;
+            position: absolute;
+            z-index: 10;
+        }
+        
+        .button:active {
+            transform: translateY(7px);
+            box-shadow: 0 0px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .yes-button {
+            background-color: var(--button-yes); 
+            border-bottom: 7px solid #8ec301;
+            top: 50%;
+            left: 55%;
+        }
+
+        .no-button {
+            background-color: var(--button-no);
+            border-bottom: 7px solid #c80000;
+            position: absolute;
+            top: 70%; 
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>really</h1>
+    
+    <button id="runningBtn" class="button yes-button">Yes</button>
+    
+    <a class="button no-button" href="final_no_response.html">No</a>
+
+    <script>
+        const btn = document.getElementById('runningBtn');
+        
+        function moveButton() {
+            const maxX = window.innerWidth - btn.offsetWidth - 20;
+            const maxY = window.innerHeight - btn.offsetHeight - 20;
+            
+            const newX = Math.floor(Math.random() * maxX);
+            const newY = Math.floor(Math.random() * maxY);
+
+            btn.style.left = newX + 'px';
+            btn.style.top = newY + 'px';
+        }
+
+        // The "Yes" button runs away when the mouse enters its area
+        btn.addEventListener('mouseenter', moveButton);
+
+        // Optional: Run on touch/click attempts
+        btn.addEventListener('click', (e) => {
+             e.preventDefault();
+             moveButton();
+             alert("Oops! Too slow! 🏃");
+        });
+    </script>
+</body>
+</html>

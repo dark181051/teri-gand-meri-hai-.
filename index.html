@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Kawaii Question</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Define High-Energy Pastel Colors */
+        :root {
+            --bg-start: #ff7eb9;
+            --bg-end: #7afcff;
+            --text-color: #3f51b5;
+            --container-bg: rgba(255, 255, 255, 0.95);
+            --button-yes: #cfff1a;
+            --button-no: #ff5252;
+        }
+
+        body {
+            background: linear-gradient(145deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            font-family: 'Bungee Inline', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            padding: 50px 70px;
+            border-radius: 35px; 
+            box-shadow: 
+                0 15px 30px rgba(0, 0, 0, 0.3), 
+                0 0 0 8px white,
+                0 0 0 10px var(--text-color);
+            text-align: center;
+            animation: bounce-in 1.5s ease-out;
+        }
+
+        h1 {
+            color: var(--text-color);
+            margin-bottom: 50px;
+            font-size: 3.2em;
+            line-height: 1.1;
+            text-shadow: 
+                -3px -3px 0px white,
+                3px 3px 0px rgba(0, 0, 0, 0.4); 
+            animation: float 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translatey(0px) rotate(1deg); }
+            100% { transform: translatey(-12px) rotate(-1deg); }
+        }
+        @keyframes bounce-in {
+            0% { transform: scale(0.5); opacity: 0; }
+            80% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .options {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 7px 0 rgba(0, 0, 0, 0.4); 
+            color: var(--text-color);
+            text-shadow: none; 
+        }
+        
+        .button:active {
+            transform: translateY(7px);
+            box-shadow: 0 0px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .yes-button {
+            background-color: var(--button-yes); 
+            border-bottom: 7px solid #8ec301;
+        }
+
+        .no-button {
+            background-color: var(--button-no);
+            border-bottom: 7px solid #c80000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>gand dega bhai</h1>
+        <div class="options">
+            <a class="button yes-button" href="yes.html">Yes</a>
+            <a class="button no-button" href="no.html">No</a>
+        </div>
+    </div>
+
+</body>
+</html>
